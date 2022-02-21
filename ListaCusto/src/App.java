@@ -17,54 +17,56 @@ public class App {
         Produto kitGamer = new Produto("Kit_Gamer",1000,5); 
         Produto tecladoMaisFone = new Produto("TecladoMaisFone",5,6);
 
-        Produto [] arrayDeProdutos = {foneDeOuvido1,foneDeOuvido2,foneDeOuvido3,foneDeOuvido4,controleXbox1,
+        Produto [] arrayDeBrinde = {foneDeOuvido1,foneDeOuvido2,foneDeOuvido3,foneDeOuvido4,controleXbox1,
         controleXbox2,pcGamer,pcGamer2, kitGamer,tecladoMaisFone};
 
         Empresa boaDex = new Empresa("BoaDex",10,0.05);
         Empresa boaLog = new Empresa("BoaLog",4.30,0.12);
         Empresa transBoa = new Empresa("Transboa",2.10,1.10);
 
-        Empresa [] arrayDeEmpresa = {boaDex,boaLog,transBoa};
+        Empresa [] arrayDeTransportadora = {boaDex,boaLog,transBoa};
 
         Custo [] arrayDeCustos = new Custo[30];
 
         inicializaArrayDeCustos(arrayDeCustos, 30);
         
 
-        calculaCusto(arrayDeCustos,arrayDeProdutos, arrayDeEmpresa);
+        calculaCusto(arrayDeCustos,arrayDeBrinde, arrayDeTransportadora);
 
     }
 
     public static void calculaCusto(Custo[] arrayDeCustos, Produto[] arrayDeBrinde, Empresa[] arrayDeTransportadora){
 
         int contadorEmpresa = 0;
+        int contadorProduto = 0;
         
-        
+        for(int j=0;j<3;j++){
 
-        while(contadorEmpresa<=2){
-
+          for(int i=0;i<30;i++){
             
-         
-          for(int i=0;i<10;i++){
             
-            arrayDeCustos[i].custoEnvio = arrayDeTransportadora[contadorEmpresa].valor_Fixo+(arrayDeBrinde[i].peso*
-            arrayDeBrinde[i].distancia*arrayDeTransportadora[contadorEmpresa].valorKgKm);
+                arrayDeCustos[i].custoEnvio = arrayDeTransportadora[contadorEmpresa].valor_Fixo+(arrayDeBrinde[contadorProduto].peso*
+                arrayDeBrinde[contadorProduto].distancia*arrayDeTransportadora[contadorEmpresa].valorKgKm);
 
-            arrayDeCustos[i].nomeDoProduto = arrayDeBrinde[i].nome;
-            arrayDeCustos[i].nomeDaTransportadora = arrayDeTransportadora[contadorEmpresa].nome;
+                arrayDeCustos[i].nomeDoProduto = arrayDeBrinde[contadorProduto].nome;
+                arrayDeCustos[i].nomeDaTransportadora = arrayDeTransportadora[contadorEmpresa].nome;
+            
+                contadorProduto++;
 
-          }
-          contadorEmpresa=contadorEmpresa+1;
+                if(contadorProduto == 10){
+                    contadorProduto=0;
+                }
 
+            }
         }
 
         listaCustos(arrayDeCustos);
-       // return arrayDeCustos;
     }
 
     public static void listaCustos(Custo[] arrayDeCustos){
         for(int i=0;i<30;i++){
-            System.out.println("Produto: " + arrayDeCustos[i].nomeDoProduto+" Empresa: "+arrayDeCustos[i].nomeDaTransportadora);
+            System.out.println("Produto: " + arrayDeCustos[i].nomeDoProduto+" Empresa: "+arrayDeCustos[i].nomeDaTransportadora+
+            " Custo do Envio: "+arrayDeCustos[i].custoEnvio);
         }
     }
 
