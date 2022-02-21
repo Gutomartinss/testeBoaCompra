@@ -16,12 +16,4 @@ public class Empresa{
        valorKgKm = novoValorKgKm;
        nome = novoNome;
    }
-
-  /* public void checaValorFixo(Produto brinde){
-       if(brinde.peso>5){
-           valor_Fixo = 10;
-           valorKgKm = 0.01;
-       }
-   }*/
-
 }
