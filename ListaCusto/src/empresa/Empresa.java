@@ -4,7 +4,7 @@ public class Empresa{
 
    public double valor_Fixo;
    public double valorKgKm;
-   String nome;
+   public String nome;
 
    public Empresa(){
 

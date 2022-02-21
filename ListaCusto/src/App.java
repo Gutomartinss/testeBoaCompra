@@ -27,12 +27,27 @@ public class App {
 
     }
 
-    public static double calculaCusto(Produto brinde, Empresa transportadora){
+    public static Custo calculaCusto(Produto[] arrayDeBrinde, Empresa[] arrayDeTransportadora){
 
-        double custoDeEnvio = transportadora.valor_Fixo + (brinde.peso*brinde.distancia*transportadora.valorKgKm);
+        int aux = 0;
+        Custo [] arrayDeCustos = new Custo[10];
+
+        for(int i=0;i<10;i++){
+
+
+         arrayDeCustos[i].custoEnvio = arrayDeTransportadora[i].valor_Fixo +(arrayDeBrinde[i].peso*
+         arrayDeBrinde[i].distancia*arrayDeTransportadora[i].valorKgKm);
+
+         arrayDeCustos[i].nomeDoProduto = arrayDeBrinde[i].nome;
+         arrayDeCustos[i].nomeDaTransportadora = arrayDeTransportadora[i].nome;
+
+        }
+        
+        
+        
      
-        return custoDeEnvio;
-     }
+        return arrayDeCustos;
+    }
 
     public static void listaCustos(){
         
