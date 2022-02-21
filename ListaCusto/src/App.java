@@ -70,11 +70,24 @@ public class App {
             }
         
 
-        listaCustos(arrayDeCustos);
+        ordenaListaCustos(arrayDeCustos);
     }
 
-    public static void listaCustos(Custo[] arrayDeCustos){
+    public static void ordenaListaCustos(Custo[] arrayDeCustos){
+        
+        Custo aux;
+
         for(int i=0;i<30;i++){
+
+            for(int j=i+1;j<30;j++){
+                if(arrayDeCustos[i].custoEnvio>arrayDeCustos[j].custoEnvio){
+                    aux = arrayDeCustos[i];
+                    arrayDeCustos[i] = arrayDeCustos[j];
+                    arrayDeCustos[j] = aux;
+                }
+            }
+
+
             System.out.println("Produto: " + arrayDeCustos[i].nomeDoProduto+" Empresa: "+arrayDeCustos[i].nomeDaTransportadora+
             " Custo do Envio: "+arrayDeCustos[i].custoEnvio);
         }
