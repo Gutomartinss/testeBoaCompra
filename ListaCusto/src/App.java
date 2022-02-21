@@ -27,30 +27,34 @@ public class App {
 
     }
 
-    public static Custo calculaCusto(Produto[] arrayDeBrinde, Empresa[] arrayDeTransportadora){
+    public static void calculaCusto(Produto[] arrayDeBrinde, Empresa[] arrayDeTransportadora){
 
-        int aux = 0;
-        Custo [] arrayDeCustos = new Custo[10];
+        int contadorEmpresa = 0;
+        
+        Custo [] arrayDeCustos = new Custo[30];
 
-        for(int i=0;i<10;i++){
+        while(contadorEmpresa<=2){
 
 
-         arrayDeCustos[i].custoEnvio = arrayDeTransportadora[i].valor_Fixo +(arrayDeBrinde[i].peso*
-         arrayDeBrinde[i].distancia*arrayDeTransportadora[i].valorKgKm);
+         
+          for(int i=0;i<10;i++){
 
-         arrayDeCustos[i].nomeDoProduto = arrayDeBrinde[i].nome;
-         arrayDeCustos[i].nomeDaTransportadora = arrayDeTransportadora[i].nome;
+            arrayDeCustos[i].custoEnvio = arrayDeTransportadora[contadorEmpresa].valor_Fixo +(arrayDeBrinde[i].peso*
+            arrayDeBrinde[i].distancia*arrayDeTransportadora[contadorEmpresa].valorKgKm);
+
+            arrayDeCustos[i].nomeDoProduto = arrayDeBrinde[i].nome;
+            arrayDeCustos[i].nomeDaTransportadora = arrayDeTransportadora[i].nome;
+
+          }
+          contadorEmpresa++;
 
         }
-        
-        
-        
      
-        return arrayDeCustos;
+       // return arrayDeCustos;
     }
 
-    public static void listaCustos(){
+   /* public static void listaCustos(Custo arrayDeCustos){
         
-    }
+    }*/
 
 }
