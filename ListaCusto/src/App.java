@@ -40,7 +40,7 @@ public class App {
         int contadorEmpresa = 0;
         int contadorProduto = 0;
         
-        for(int j=0;j<3;j++){
+        
 
           for(int i=0;i<30;i++){
             
@@ -53,12 +53,13 @@ public class App {
             
                 contadorProduto++;
 
-                if(contadorProduto == 10){
-                    contadorProduto=0;
+                if(contadorProduto == 10){ //Se chegou ao decimo produto
+                    contadorProduto=0;     // Retorna ao primeiro
+                    contadorEmpresa++;  //Troca para a proxima Transportadora
                 }
 
             }
-        }
+        
 
         listaCustos(arrayDeCustos);
     }
