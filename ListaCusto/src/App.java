@@ -25,20 +25,24 @@ public class App {
 
         Empresa [] arrayDeEmpresa = {boaDex,boaLog,transBoa};
 
+        Custo [] arrayDeCustos = new Custo[30];
+
+        calculaCusto(arrayDeCustos,arrayDeProdutos, arrayDeEmpresa);
+
     }
 
-    public static void calculaCusto(Produto[] arrayDeBrinde, Empresa[] arrayDeTransportadora){
+    public static void calculaCusto(Custo[] arrayDeCustos, Produto[] arrayDeBrinde, Empresa[] arrayDeTransportadora){
 
         int contadorEmpresa = 0;
         
-        Custo [] arrayDeCustos = new Custo[30];
+        
 
         while(contadorEmpresa<=2){
 
 
          
           for(int i=0;i<10;i++){
-
+            
             arrayDeCustos[i].custoEnvio = arrayDeTransportadora[contadorEmpresa].valor_Fixo +(arrayDeBrinde[i].peso*
             arrayDeBrinde[i].distancia*arrayDeTransportadora[contadorEmpresa].valorKgKm);
 
@@ -49,12 +53,15 @@ public class App {
           contadorEmpresa++;
 
         }
-     
+
+        listaCustos(arrayDeCustos);
        // return arrayDeCustos;
     }
 
-   /* public static void listaCustos(Custo arrayDeCustos){
-        
-    }*/
+    public static void listaCustos(Custo[] arrayDeCustos){
+        for(int i=0;i<30;i++){
+            System.out.println("Produto: " + arrayDeCustos[i].nomeDoProduto);
+        }
+    }
 
 }
