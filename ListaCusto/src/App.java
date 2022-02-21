@@ -26,6 +26,7 @@ public class App {
         Empresa [] arrayDeEmpresa = {boaDex,boaLog,transBoa};
 
         Custo [] arrayDeCustos = new Custo[30];
+        
 
         calculaCusto(arrayDeCustos,arrayDeProdutos, arrayDeEmpresa);
 
@@ -39,7 +40,7 @@ public class App {
 
         while(contadorEmpresa<=2){
 
-
+            
          
           for(int i=0;i<10;i++){
             
