@@ -4,7 +4,7 @@ import custo.Custo;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        System.out.println("Custos de envio: ");
 
         Produto foneDeOuvido1 = new Produto("FoneDeOuvido",1,1);
         Produto foneDeOuvido2 = new Produto("FoneDeOuvido",430,1);
@@ -44,7 +44,14 @@ public class App {
 
           for(int i=0;i<30;i++){
             
-            
+                //Se empresa for Transboa
+                if(contadorEmpresa==2){
+                    if(arrayDeBrinde[contadorProduto].peso>5){ //Checa o peso e modifica as taxas
+                        arrayDeTransportadora[contadorEmpresa].valor_Fixo = 10;
+                        arrayDeTransportadora[contadorEmpresa].valorKgKm = 0.01;
+                    }
+                }
+                
                 arrayDeCustos[i].custoEnvio = arrayDeTransportadora[contadorEmpresa].valor_Fixo+(arrayDeBrinde[contadorProduto].peso*
                 arrayDeBrinde[contadorProduto].distancia*arrayDeTransportadora[contadorEmpresa].valorKgKm);
 
@@ -53,9 +60,11 @@ public class App {
             
                 contadorProduto++;
 
-                if(contadorProduto == 10){ //Se chegou ao decimo produto
+                //Se chegou ao decimo produto
+                if(contadorProduto == 10){ 
                     contadorProduto=0;     // Retorna ao primeiro
                     contadorEmpresa++;  //Troca para a proxima Transportadora
+                    
                 }
 
             }
