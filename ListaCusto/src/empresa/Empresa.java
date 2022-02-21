@@ -2,15 +2,15 @@ package empresa;
 
 public class Empresa{
 
-    double valor_Fixo;
-    double valorKgKm;
+   public double valor_Fixo;
+   public double valorKgKm;
    String nome;
 
-   Empresa(){
+   public Empresa(){
 
    }
 
-   Empresa(String novoNome, double novoValor_Fixo, double novoValorKgKm){
+   public Empresa(String novoNome, double novoValor_Fixo, double novoValorKgKm){
 
        valor_Fixo = novoValor_Fixo;
        valorKgKm = novoValorKgKm;

@@ -1,5 +1,5 @@
-import empresa.*;
-import produto.*;
+import empresa.Empresa;
+import produto.Produto;
 
 public class App {
     public static void main(String[] args) throws Exception {

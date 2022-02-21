@@ -1,15 +1,16 @@
 package produto;
 
 public class Produto {
-    double peso;
-    double distancia;
+    
+    public double peso;
+    public double distancia;
 
-    Produto(){
+   public Produto(){
 
 
     }
 
-    Produto( double novaDistancia, double novoPeso){
+    public Produto(double novaDistancia, double novoPeso){
         
         distancia = novaDistancia;
         peso = novoPeso;
