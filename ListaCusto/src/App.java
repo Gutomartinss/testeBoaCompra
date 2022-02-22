@@ -70,10 +70,10 @@ public class App {
             }
         
 
-        ordenaListaCustos(arrayDeCustos);
+        ordenaMostraCustos(arrayDeCustos);
     }
 
-    public static void ordenaListaCustos(Custo[] arrayDeCustos){
+    public static void ordenaMostraCustos(Custo[] arrayDeCustos){
         
         Custo aux;
 
