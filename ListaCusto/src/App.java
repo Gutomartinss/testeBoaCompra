@@ -88,8 +88,7 @@ public class App {
             }
 
 
-            System.out.println("Produto: " + arrayDeCustos[i].nomeDoProduto+" Empresa: "+arrayDeCustos[i].nomeDaTransportadora+
-            " Custo do Envio: "+arrayDeCustos[i].custoEnvio);
+            System.out.println("Produto: " + arrayDeCustos[i].nomeDoProduto+" | "+" Empresa: "+arrayDeCustos[i].nomeDaTransportadora+" | "+" Custo do Envio: "+arrayDeCustos[i].custoEnvio);
         }
     }
 
